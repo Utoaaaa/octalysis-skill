@@ -1,0 +1,52 @@
+{
+  "skill": "strategy-dashboard",
+  "version": "0.1.0",
+  "source_book": "《遊戲化實戰全書》 — 周郁凱 Yu-kai Chou",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我們想做一個提升員工培訓參與的動機設計，但指標、對象、行為都還沒定。",
+      "expected_behavior": "Activate strategy-dashboard; define ranked metrics, actors, target behaviors, feedback, rewards.",
+      "notes": "Design brief missing."
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "這個產品同時想要新用戶、留存、推薦和營收，幫我先排設計優先順序。",
+      "expected_behavior": "Activate strategy-dashboard; rank metrics and state tradeoffs.",
+      "notes": "Metric priority problem."
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "先不要想玩法，幫我把這個健康打卡 app 轉成 motivation design brief。",
+      "expected_behavior": "Activate strategy-dashboard; build universal dashboard.",
+      "notes": "Explicit brief request."
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "幫我寫一個簡短的產品 slogan。",
+      "expected_behavior": "Do not activate unless the user asks for behavior-design strategy.",
+      "notes": "Copywriting only."
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "幫我算一下這組數字的平均值。",
+      "expected_behavior": "Do not activate; simple calculation.",
+      "notes": "No motivation design."
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我已經知道主要指標是課程完成率，但還不確定哪些行為會影響它。",
+      "expected_behavior": "Activate; metric exists but target behavior path still needs dashboard work.",
+      "notes": "Partial dashboard."
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "All should_not_trigger cases must pass."
+}

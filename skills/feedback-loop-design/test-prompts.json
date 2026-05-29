@@ -1,0 +1,52 @@
+{
+  "skill": "feedback-loop-design",
+  "version": "0.1.0",
+  "source_book": "《遊戲化實戰全書》 — 周郁凱 Yu-kai Chou",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "使用者完成第一次任務後就離開，怎麼讓完成行為變成下一次行動的動力?",
+      "expected_behavior": "Activate feedback-loop-design; map trigger-action-feedback-asset-reentry.",
+      "notes": "Re-entry loop design."
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我們的獎勵拿完就沒後續，幫我改成能自我強化的行為迴圈。",
+      "expected_behavior": "Activate feedback-loop-design; convert exit rewards into accelerators.",
+      "notes": "Reward loop problem."
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "幫我設計一個 agent research workflow 的 artifact -> review -> next lead 的再進入機制。",
+      "expected_behavior": "Activate feedback-loop-design; design loop for agent workflow.",
+      "notes": "AI workflow repeat loop."
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "幫我寫一封一次性的活動邀請 email。",
+      "expected_behavior": "Do not activate unless repeated behavior or re-entry is requested.",
+      "notes": "One-time message."
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "什麼是 feedback 這個英文單字?",
+      "expected_behavior": "Do not activate; vocabulary question.",
+      "notes": "No design task."
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "這個購買行為可能只發生一次，但我們希望購買後變成社群分享。",
+      "expected_behavior": "Activate; the loop is purchase-to-share rather than purchase repetition.",
+      "notes": "One primary action, downstream loop."
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "All should_not_trigger cases must pass."
+}

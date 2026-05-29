@@ -1,0 +1,13 @@
+# Do not publish original source material.
+/source/
+/books/
+
+# Local/editor noise.
+.DS_Store
+**/.DS_Store
+
+# Temporary extraction output should stay outside the repo, but ignore if created here.
+/tmp/
+/extract/
+/work/
+/distillation-work/

@@ -1,0 +1,52 @@
+{
+  "skill": "motivation-ethics-review",
+  "version": "0.1.0",
+  "source_book": "《遊戲化實戰全書》 — 周郁凱 Yu-kai Chou",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我們想加連續打卡和斷簽懲罰來提高健康 app 留存，幫我做倫理審查。",
+      "expected_behavior": "Activate motivation-ethics-review; assess CD8 pressure, fatigue, agency, alternatives.",
+      "notes": "Explicit risky mechanism."
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "這個倒數限時優惠短期轉換很好，但使用者抱怨被操控。",
+      "expected_behavior": "Activate motivation-ethics-review; evaluate scarcity pressure and trust cost.",
+      "notes": "Black-hat fatigue."
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我們要做 mystery box 隨機獎勵給學習任務，會不會破壞動機?",
+      "expected_behavior": "Activate motivation-ethics-review; assess CD7 variable reward and intrinsic motivation.",
+      "notes": "Variable reward risk."
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "幫我列出八項核心動力。",
+      "expected_behavior": "Do not activate; glossary task.",
+      "notes": "Information only."
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "幫我修 test failure。",
+      "expected_behavior": "Do not activate; coding/test task.",
+      "notes": "No motivation ethics."
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我想提醒使用者錯過申報截止會被罰，這算恐嚇嗎?",
+      "expected_behavior": "Activate; review whether loss framing is truthful, proportionate, and paired with agency.",
+      "notes": "Real consequence versus manipulation."
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "All should_not_trigger cases must pass."
+}

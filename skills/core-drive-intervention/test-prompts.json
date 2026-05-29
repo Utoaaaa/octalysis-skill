@@ -1,0 +1,52 @@
+{
+  "skill": "core-drive-intervention",
+  "version": "0.1.0",
+  "source_book": "《遊戲化實戰全書》 — 周郁凱 Yu-kai Chou",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "診斷後發現這個工作流缺 CD3 自主選擇和 CD5 社交認可，幫我設計介入。",
+      "expected_behavior": "Activate core-drive-intervention; design CD3/CD5 interventions with feedback and risks.",
+      "notes": "Known missing drives."
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "不要只給獎勵，幫我用八個核心動力想幾個改善學習持續性的方案。",
+      "expected_behavior": "Activate core-drive-intervention; generate drive-specific intervention options.",
+      "notes": "Design intervention request."
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "這個健康行為一直靠恐懼提醒，我想改成比較有掌控感的設計。",
+      "expected_behavior": "Activate core-drive-intervention and likely compose with ethics review.",
+      "notes": "Rebalancing drives."
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "請列出八項核心動力的中文名稱。",
+      "expected_behavior": "Do not activate fully; answer from glossary unless intervention is requested.",
+      "notes": "Information lookup."
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "幫我把 app 的按鈕顏色改成藍色。",
+      "expected_behavior": "Do not activate; implementation/UI change without motivation context.",
+      "notes": "No intervention reasoning needed."
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我們可能缺 CD1，但我還不確定是不是。",
+      "expected_behavior": "Prefer motivation-diagnosis first; activate this only after confirming CD1 gap.",
+      "notes": "Diagnosis incomplete."
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "All should_not_trigger cases must pass."
+}

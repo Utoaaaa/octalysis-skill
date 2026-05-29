@@ -1,0 +1,52 @@
+{
+  "skill": "mission-narrative-design",
+  "version": "0.1.0",
+  "source_book": "《遊戲化實戰全書》 — 周郁凱 Yu-kai Chou",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "這個學習計畫現在像待辦清單，幫我把它連到長期身份和使命，但不要像空口號。",
+      "expected_behavior": "Activate mission-narrative-design; create credible CD1 narrative tied to behavior.",
+      "notes": "CD1 identity and credibility."
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我們的社群缺共同方向，成員只是在領福利，怎麼建立可信的共同使命?",
+      "expected_behavior": "Activate mission-narrative-design; define mission type, credibility, reinforcement.",
+      "notes": "Community mission."
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我想借鑑 Patagonia 那種不是獎勵而是信念的設計。",
+      "expected_behavior": "Activate mission-narrative-design, possibly compose with case-pattern-transfer.",
+      "notes": "Mission case adaptation."
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "幫我寫十句熱血 slogan。",
+      "expected_behavior": "Do not activate unless credible behavior-linked mission is requested.",
+      "notes": "Slogan-only request."
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "幫我設計一個限時折扣倒數。",
+      "expected_behavior": "Do not activate; scarcity design should route to ethics/intervention, not mission.",
+      "notes": "CD6 not CD1."
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我們想講 ESG 故事，但實際上還沒有可驗證成果。",
+      "expected_behavior": "Activate for credibility review and likely warn against mission claim until proof exists.",
+      "notes": "Mission credibility boundary."
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "All should_not_trigger cases must pass."
+}

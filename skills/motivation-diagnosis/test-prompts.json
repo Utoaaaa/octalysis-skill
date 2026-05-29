@@ -1,0 +1,52 @@
+{
+  "skill": "motivation-diagnosis",
+  "version": "0.1.0",
+  "source_book": "《遊戲化實戰全書》 — 周郁凱 Yu-kai Chou",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我們的學習社群很多人報名，但兩週後幾乎沒人繼續交作業，幫我診斷為什麼。",
+      "expected_behavior": "Activate motivation-diagnosis; map target behavior and CD1-CD8 gaps by journey stage.",
+      "notes": "Observed behavior failure needs motivation diagnosis."
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "這個 agent research workflow 一開始很有衝勁，但做到第一份 artifact 後就停住。",
+      "expected_behavior": "Activate motivation-diagnosis; identify stage transition and missing drives.",
+      "notes": "Workflow motivation drop-off."
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "使用者不是不知道功能，也不是不會用，但就是不回來。",
+      "expected_behavior": "Activate motivation-diagnosis; distinguish function adequacy from missing motivation.",
+      "notes": "Classic function-versus-motivation problem."
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "幫我修登入 API 500 error。",
+      "expected_behavior": "Do not activate; this is a technical failure unless motivation is later raised.",
+      "notes": "Technical bug."
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "幫我把這段英文翻成繁體中文。",
+      "expected_behavior": "Do not activate; translation task.",
+      "notes": "No behavior diagnosis."
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我們的 onboarding 很長，使用者卡住，可能是 UX 也可能是動機。",
+      "expected_behavior": "Activate lightly; first separate friction/ability/trust from motivation before diagnosing drives.",
+      "notes": "Mixed UX and motivation."
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "All should_not_trigger cases must pass."
+}
