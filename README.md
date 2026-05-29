@@ -14,6 +14,12 @@ The result is not a gamification tricks library. It is a general motivation arch
 - `assets/` — reusable motivation-design asset library
 - `README.md` and `INDEX.md` — package guide and navigation
 
+## Installation
+
+```bash
+npx skills add utoaaaa/octalysis-skill
+```
+
 ## Executable Skills
 
 - `motivation-diagnosis`
