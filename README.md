@@ -7,18 +7,18 @@ This is the publishable skill package distilled from:
 
 The result is not a gamification tricks library. It is a general motivation architecture for diagnosing and designing human behavior across habits, learning, work, products, communities, education, health behavior, onboarding, B2B tools, and AI-agent workflows.
 
+## Installation
+
+```bash
+npx skills add utoaaaa/octalysis-skill
+```
+
 ## Contents
 
 - `SKILL.md` — root routing skill
 - `skills/` — eight executable skills
 - `assets/` — reusable motivation-design asset library
 - `README.md` and `INDEX.md` — package guide and navigation
-
-## Installation
-
-```bash
-npx skills add utoaaaa/octalysis-skill
-```
 
 ## Executable Skills
 
